@@ -1,6 +1,5 @@
 <?php
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,23 +82,20 @@
 </head>
 <body>
 	<header>
-		<h1>Admin Dashboard</h1>
+		<h1>Admin Annoucement</h1>
 	</header>
 	
 	<nav>
 		<ul>
-			<li><a href="#">Dashboard</a></li>
-			<li><a href="admin-annouceme">Annoucement</a></li>
-			<li><a href="#">Result</a></li>
+			<li><a href="admin-dashboard.php">Dashboard</a></li>
+			<li><a href="admin-annoucement.php">Annoucement</a></li>
+			<li><a href="admin-result.php">Result</a></li>
 			<li><a href="#">Students Data</a></li>
 			<li><a href="#">Settings</a></li>
 			<li><a href="admin-login.php">Logout</a></li>
 		</ul>
 	</nav>
 	
-	<section>
-		<h2>Welcome, Admin!</h2>
-		<p>You can use the navigation bar above to access various sections of the admin dashboard.</p>
-	</section>
+
 </body>
 </html>

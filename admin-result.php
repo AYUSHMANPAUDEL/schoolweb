@@ -1,6 +1,7 @@
 <?php
 
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -83,7 +84,7 @@
 </head>
 <body>
 	<header>
-		<h1>Admin Dashboard</h1>
+		<h1>Admin Result</h1>
 	</header>
 	
 	<nav>
@@ -96,10 +97,7 @@
 			<li><a href="admin-login.php">Logout</a></li>
 		</ul>
 	</nav>
-	
-	<section>
-		<h2>Welcome, Admin!</h2>
-		<p>You can use the navigation bar above to access various sections of the admin dashboard.</p>
-	</section>
+	<iframe src="https://docs.google.com/spreadsheets/d/1bvYFxgD46hQcC1xLnz49E4H81MJQ7KNBMnmKvKQcXVA/edit#gid=0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+
 </body>
 </html>
