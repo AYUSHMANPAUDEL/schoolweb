@@ -1,241 +1,174 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>Result</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="https://kit.fontawesome.com/86206dfed9.js" crossorigin="anonymous"></script>
   <style>
-    * {
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: static;
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 10px;
+  body{
+    font-family: sans-serif;
+    margin: 0px;
   }
-  
-  .logo {
-    flex-direction: column;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .logo img {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  
-  .logo h2 {
-    font-size: 20px;
-  }
-  
-  .menu {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  
-  .menu li {
-    margin-bottom: 0;
-  }
-  
-  .menu a {
-    font-size: 16px;
-    padding: 5px;
-  }
-  
-  h1 {
-    margin-top: 20px;
-    font-size: 28px;
-  }
-  
-  form {
-    width: 80%;
-  }
-  
-  label {
-    font-size: 16px;
-  }
-  
-  input[type="submit"] {
-    font-size: 16px;
-  }
-  
-  #result p {
-    font-size: 18px;
-  }
-}
-
-    body {
-			margin: 0;
-			padding: 0;
-		}
-
-		.sidebar {
+/* Sidebar */
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20%;
+  width: 200px;
   height: 100%;
   background-color: #007bff;
   padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    background-color: #007bff;
-    padding: 20px;
-  }
-  .menu li {
-    margin-bottom: 10px;
-  }
-  .menu a {
-    display: block;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  .menu a:hover {
-    background-color: #0056b3;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
 
-		.logo {
-			display: flex;
-			align-items: center;
-			margin-bottom: 30px;
-		}
+.logo h2 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
 
-		.logo img {
-			width: 50px;
-			height: 50px;
-			margin-right: 10px;
-		}
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-		.logo h2 {
-			color: white;
-			font-size: 24px;
-			margin: 0;
-		}
+.menu li {
+  margin-bottom: 10px;
+}
 
-		.menu {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
+.menu a {
+  display: block;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
 
-		.menu li {
-			margin-bottom: 10px;
-		}
-    @media (max-width: 768px) {
+.menu a:hover {
+  background-color: #0056b3;
+}
+
+#school-logo {
+  width: 30%;
+  height: 50px;
+}
+
+#noti-logo {
+  padding: 10px;
+}
+
+#current {
+  background-color: #0056b3;
+}
+
+/* Form */
+h1 {
+  color: #0077cc;
+  text-align: center;
+  margin-top: 50px;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #0077cc;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #0066b2;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  color: #0077cc;
+}
+
+/* Responsive styles for form */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-top: 0px;
+    margin: 0;
+  }
+  
   .menu a {
+    padding: 5px;
     font-size: 16px;
+  }
+  
+  #school-logo {
+    width: 50%;
+    height: auto;
+  }
+  
+  #noti-logo {
     padding: 5px;
   }
   
-  label {
+  form {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
     font-size: 16px;
   }
   
   input[type="submit"] {
+    padding: 5px;
     font-size: 16px;
+    width: 100%;
   }
 }
 
-		.menu a {
-			display: block;
-			color: white;
-			font-size: 18px;
-			text-decoration: none;
-			padding: 10px;
-			border-radius: 5px;
-			transition: all 0.3s ease-in-out;
-		}
-
-		.menu a:hover {
-			background-color: #0056b3;
-		}
-
-	#school-logo{
-    width: 30%;
-    height: 50px;
-  }
-  #noti-logo{
-    padding: 10px;
-  }
-    h1 {
-      color: #0077cc;
-      text-align: center;
-      margin-top: 50px;
-    }
-    form {
-      margin: 0 auto;
-      text-align: center;
-      width: 50%;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-      color: #0077cc;
-    }
-    input[type="text"] {
-      padding: 5px;
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    input[type="submit"] {
-      margin-top: 10px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: none;
-      background-color: #0077cc;
-      color: #ffffff;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    input[type="submit"]:hover {
-      background-color: #0066b2;
-    }
-    #result {
-      margin-top: 20px;
-      text-align: center;
-      color: #0077cc;
-    }
-    @media (max-width: 768px) {
-  #result p {
-    font-size: 18px;
-  }
-}
-
-    #result p {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .result-ouput{
-      padding: 80px;
-    }
-    #result-hover-active{
-      background-color: #0056b3;
-    }
   </style>
   <script>
     function getResult() {
@@ -267,8 +200,8 @@
       </div>
 		</div>
 		<ul class="menu">
-			<li><a href="#">Home</a></li>
-			<li><a href="#" id="result-hover-active">Result</a></li>
+			<li><a href="sec.php">Home</a></li>
+			<li><a href="result.html" id="current">Result</a></li>
 			<li><a href="#">Notes</a></li>
 			<li><a href="#">Gallery</a></li>
 		</ul>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Sidebar</title>
+	<title>Student Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-N/iI/aLrQZR8zstPgJKGv4NfX4VV4iSwWsI+jLFx5y5H5Ji/5S60UDMWgD0lZmR9XU0JlsU8d6xwpO6zBZ/Tw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://kit.fontawesome.com/86206dfed9.js" crossorigin="anonymous"></script>
 	<style>
 		body {
 			margin: 0;
 			padding: 0;
+			font-family: sans-serif;
 		}
 
 		.sidebar {
@@ -62,13 +63,41 @@
 			background-color: #0056b3;
 		}
 
-	#school-logo{
-    width: 30%;
-    height: 50px;
-  }
-  #noti-logo{
+		#school-logo {
+			width: 30%;
+			height: 50px;
+		}
+
+		#noti-logo {
+			padding: 10px;
+		}
+
+		#current {
+			background-color: #0056b3;
+		}
+		@media only screen and (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
     padding: 10px;
   }
+  
+  .menu a {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  #school-logo {
+    width: 50%;
+    height: auto;
+  }
+  
+  #noti-logo {
+    padding: 5px;
+  }
+}
+	
 	</style>
   <script>
 function baka() {
@@ -86,14 +115,13 @@ function baka() {
 <body>
 	<div class="sidebar">
 		<div class="logo">
-			<img src="mainlogo.png" id="school-logo">
 			<h2>SkyRider</h2>
 			<div class="notification">
       <i class="fa-solid fa-bell fa-xl" style="color: #002461;" onclick="baka()" id="noti-logo"></i>
       </div>
 		</div>
 		<ul class="menu">
-			<li><a href="sec.php">Home</a></li>
+			<li><a href="sec.php" id="current">Home</a></li>
 			<li><a href="result.html">Result</a></li>
 			<li><a href="#">Notes</a></li>
 			<li><a href="#">Gallery</a></li>

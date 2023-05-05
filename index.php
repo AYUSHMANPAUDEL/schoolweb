@@ -1,13 +1,14 @@
   <?php
   error_reporting(0);
-  $email = $_GET['gmail'];
-  $pss = $_GET['password'];
-  $o = "true";
+  $email = $_POST['gmail'];
+  $pss = $_POST['password'];
+  $o = "";
 
   $a = substr($email,-16);
   if (!empty($email) && !empty($pss) && $a === "@skyrider.edu.np") {
-    header('Location: sec.php');
-    exit;
+    $o = "true";
+    // header('Location: sec.php');
+    // exit;
   }
   elseif ($a != "@skyrider.edu.np"){
     $o = "false";
@@ -36,6 +37,9 @@
       <?php
     if($o == "false"){
       echo "alert('PLEASE USE SCHOOL ACCOUNT WHILE USING SCHOOL WEBSITE');";
+    }
+    elseif($o=="true"){
+    echo "location.href='sec.php'"; 
     }
 
   ?>
@@ -112,7 +116,7 @@
   </a>
     <!-- login for student start -->
   <div class="login-box" id="login-box">
-    <form method="get" action="index.php">
+    <form method="post" action="index.php">
       <label for="email">Email:</label>
       <input type="text" name="gmail" required>
       <br>
