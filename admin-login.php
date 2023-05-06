@@ -9,7 +9,7 @@ try {
         exit;
     }
     elseif(empty($username)&& empty($password)){
-
+		
     }
      else {
         // Display an error message if the username or password is incorrect or if either field is empty

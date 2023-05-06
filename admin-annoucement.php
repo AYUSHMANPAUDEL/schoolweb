@@ -1,4 +1,21 @@
 <?php
+include 'connect.php';
+
+if(isset($_POST['send'])){
+	$title = $_POST['title'];
+	$content = $_POST['content'];
+	$date = date('y-m--d h:i:s');
+	$sql_insert = mysqli_query($con,"INSERT INTO message(title,content) VALUES ('$title','$content')");
+
+	if($sql_insert){
+		echo"<script>alert('Message sent successfully');</script>";
+
+	}
+	else{
+		echo mysqli_error($con);
+		exit;
+	}
+}
 
 ?>
 <!DOCTYPE html>
@@ -78,6 +95,54 @@
 				margin-bottom: 10px;
 			}
 		}
+		form {
+			background-color: #fff;
+			max-width: 600px;
+			margin: 20px auto;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+		}
+		
+		input[type="text"], textarea {
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+			resize: none;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+			color: #333;
+			background-color: #f2f2f2;
+		}
+		
+		input[type="submit"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #87CEEB;
+			color: #fff;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #333;
+		}
+		
+		@media screen and (max-width: 768px) {
+			form {
+				max-width: 100%;
+				margin: 20px;
+			}
+		}
 	</style>
 </head>
 <body>
@@ -95,7 +160,16 @@
 			<li><a href="admin-login.php">Logout</a></li>
 		</ul>
 	</nav>
-	
-
+	<form action="admin-annoucement.php" method="post">
+		<label for="title">Title:</label>
+		<input type="text" id="title" name="title" required>
+		
+		<label for="content">Content:</label>
+		<textarea id="content" name="content" required></textarea>
+		<input type="checkbox" id="notification" name="notification">
+		<label for="notification">Give Notifications To Student:</label>
+		
+		<input type="submit" value="Submit" name="send">
+	</form>
 </body>
 </html>

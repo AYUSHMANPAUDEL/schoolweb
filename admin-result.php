@@ -90,8 +90,8 @@
 	<nav>
 		<ul>
 			<li><a href="#">Dashboard</a></li>
-			<li><a href="admin-annouceme">Annoucement</a></li>
-			<li><a href="#">Result</a></li>
+			<li><a href="admin-annoucement.php">Annoucement</a></li>
+			<li><a href="admin-result.php">Result</a></li>
 			<li><a href="#">Students Data</a></li>
 			<li><a href="#">Settings</a></li>
 			<li><a href="admin-login.php">Logout</a></li>
